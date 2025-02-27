@@ -1,6 +1,59 @@
 html{
-    font-family: serif;
-    background: rgb(253, 254, 246);
+    font-family: "Work Sans", sans-serif;
+    background: #001a82;
+    margin: 0;
+    color: white; 
+}
+
+h1{
+    font-family: "Work Sans", sans-serif;
+    font-size: 200pt;
+    text-align: center;
+    margin: 0;
+    margin-top: 200px;
+}
+
+h2{
+    font-family: "Work Sans", sans-serif;
+    font-size: 200pt;
+    text-align: center;
     margin: 0;
 }
 
+p{
+    font-family: "Trirong", serif;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #001a82;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: thin solid black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #001a82;
+}
+
+.active {
+    color: #45a2ff;
+}
