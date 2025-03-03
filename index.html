@@ -1,24 +1,102 @@
 <!DOCTYPE html>
 <html>
-    
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Voltaire&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
 
-  <body>
-
-    <h1>ALEX</h1>
-    
-    <h2>LIU</h2>
-    <p>Hello, world!</p>
-    
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
+  <body class="fade-in-bg">
+    <!-- Navigation Bar -->
+    <ul id="navbar" class="bounce-in">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#interests">Interests</a></li>
     </ul>
 
+    <div id="progress-bar"></div>
+
+    <!-- Sections -->
+    <section id="home" class="section fade-in">
+      <h1>ALEX</h1>
+      <div class="rounded-rectangle extend">
+        <span class="flowing-text">ISF G10 STUDENT · COMPUTER SCIENCE ENTHUSIAST · PIPA PLAYER · ISF G10 STUDENT · COMPUTER SCIENCE ENTHUSIAST · PIPA PLAYER · </span>
+      </div>
+      <h2>LIU</h2>
+      <div class="explore-arrow">
+        <a href="#about" class="arrow-link">
+          <span class="arrow">↓</span>
+        </a>
+      </div>      
+    </section>
+
+    <section id="about" class="section fade-in">
+      <h3>About Me</h3>
+      <p>Hi, I'm Alex! I'm a high school student passionate about computer science, music, and learning new things.</p>
+      <img src="https://vpcc.edu/images/programs/computer-science-1.jpg" alt="Dummy Image">
+    </section>
+
+    <section id="projects" class="section fade-in">
+      <h3>Projects</h3>
+      <p>Here are some of the projects I've worked on:</p>
+      <div class="project-grid">
+        <div class="project">
+          <img src="https://projectsly.com/images/blog/best-project-design.png?v=1686553999071005322" alt="Project 1">
+          <p>Project 1</p>
+        </div>
+        <div class="project">
+          <img src="https://media.licdn.com/dms/image/v2/D4D12AQGVw0sVZ7Kj-g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1673636348357?e=2147483647&v=beta&t=PSpU4mZFpMBmE14oWDnDwf5a8_4rdQUiCUKF_U-x584" alt="Project 2">
+          <p>Project 2</p>
+        </div>
+        <div class="project">
+          <img src="https://marvel-b1-cdn.bc0a.com/f00000000100045/www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg" alt="Project 3">
+          <p>Project 3</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section fade-in">
+      <h3>Education</h3>
+      <p>I'm currently a student at ISF, focusing on computer science and mathematics.</p>
+      <img src="https://via.placeholder.com/400" alt="Dummy Image">
+    </section>
+
+    <section id="interests" class="section fade-in">
+      <h3>Interests</h3>
+      <p>In my free time, I enjoy playing the pipa, coding, and exploring new technologies.</p>
+      <img src="https://m.media-amazon.com/images/I/41bL7owjZNL.jpg" alt="Dummy Image">
+    </section>
+
+    <!-- JavaScript for Smooth Navigation -->
+    <script>
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent default jump behavior
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth' // Smooth scroll
+          });
+        });
+      });
+
+      // Update active class on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('#navbar a');
+
+        sections.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+          }
+        });
+      });
+      
+      </script>
   </body>
 </html>

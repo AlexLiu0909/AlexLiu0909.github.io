@@ -1,41 +1,56 @@
-html{
-    font-family: "Work Sans", sans-serif;
+html, body{
+    font-family: "Biryani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     background: #001a82;
     margin: 0;
-    color: white; 
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    color: white;
 }
 
 h1{
-    font-family: "Work Sans", sans-serif;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 200pt;
     text-align: center;
     margin: 0;
-    margin-top: 200px;
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Ensure no extra space from line height */
 }
 
 h2{
-    font-family: "Work Sans", sans-serif;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 200pt;
     text-align: center;
-    margin: 0;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Ensure no extra space from line height */
 }
 
 p{
-    font-family: "Trirong", serif;
+    font-family: "Biryani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 ul {
+    font-size: 12pt;
     list-style-type: none;
-    margin-top: 0;
-    padding: 0;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background-color: #001a82;
+    background-color: rgba(0, 18, 51, 0.7); /* Deep Navy Blue with 70% opacity */
+    backdrop-filter: blur(10px); /* Apply blur effect */
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: thin solid black;
+    z-index: 1000; /* Ensure the navigation bar is above other content */
 }
 
 li {
@@ -48,12 +63,214 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    position: relative; /* Required for pseudo-element animations */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-li a:hover:not(.active) {
-    background-color: #001a82;
+/* Hover effect for menu bar buttons */
+li a:hover {
+    background-color: #45a2ff; /* Fluorescent blue background on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-2.5px); /* Move button up slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
 }
 
-.active {
-    color: #45a2ff;
+/* Clicking effect for menu bar buttons */
+li a:active {
+    background-color: #003366; /* Darker blue background on click */
+    transform: translateY(0) scale(0.95); /* Reset translateY and shrink slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
+
+/* Style for the active button */
+li a.active {
+    color: #45a2ff; /* Fluorescent blue text */
+    background-color: transparent; /* Remove background color */
+    border-bottom: 2px solid #45a2ff; /* Add an underline */
+}
+
+/* Add an underline animation on hover */
+li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #45a2ff; /* Fluorescent blue underline */
+    transform: scaleX(0); /* Start with no width */
+    transform-origin: right;
+    transition: transform 0.3s ease; /* Smooth transition for the underline */
+}
+
+li a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+    transform-origin: left;
+}
+
+
+
+/* Section styling */
+.section {
+    padding: 100px 20px; /* Add padding to each section */
+    min-height: 100vh; /* Ensure each section takes up the full viewport height */
+    text-align: center; /* Center-align content */
+    box-sizing: border-box; /* Include padding in the element's total height */
+}
+
+.section h3 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 48px; /* Larger font size for section headings */
+    margin-bottom: 20px; /* Add spacing below headings */
+}
+
+.section p {
+    font-family: "Biryani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px; /* Larger font size for paragraphs */
+    margin-bottom: 20px; /* Add spacing below paragraphs */
+}
+
+.section img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to images */
+}
+
+/* Project grid styling */
+.project-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add spacing between projects */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.project {
+    width: 200px; /* Fixed width for projects */
+    text-align: center;
+}
+
+.project img {
+    border-radius: 10px; /* Add rounded corners to project images */
+}
+
+
+
+/* Flowing text */
+.rounded-rectangle {
+    width: 650px; /* Adjust width to match the length of "ALEX" */
+    height: 60px; /* Shorter height */
+    background-color: black;
+    border-radius: 40px; /* Rounded corners */
+    margin: 0px auto; /* Reduced spacing (top and bottom) */
+    position: relative;
+    overflow: hidden; /* Ensures text doesn't overflow */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+}
+
+.flowing-text {
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    white-space: nowrap; /* Prevents text from wrapping */
+    color: #45a2ff; /* Fluorescent blue color */
+    font-size: 20px; /* Adjust font size as needed */
+    animation: flow 10s linear infinite; /* Animation for flowing text */
+    top: 50%; /* Centers text vertically */
+    transform: translateY(-50%); /* Centers text vertically */
+    letter-spacing: 4px; /* Increased spacing between letters */
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(0) translateY(-50%); /* Starts from the right */
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%); /* Moves to the left */
+    }
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Add keyframes for bounce-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to elements with the class "fade-in" */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Add keyframes for background color transition */
+@keyframes fadeInBg {
+    0% {
+        background-color: rgb(0, 0, 0);
+    }
+    100% {
+        background-color: #001a82;
+    }
+}
+
+/* Add keyframes for extend animation */
+@keyframes extend {
+    0% {
+        width: 0;
+        height: 60px;
+    }
+    100% {
+        width: 650px;
+        height: 60px;
+    }
+}
+
+.extend {
+    animation: extend 1.7s ease-out;
+}
+
+.fade-in-bg {
+    animation: fadeInBg 1s ease-in;
+}
+
+/* Add keyframes for bounce-in animation */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-1000px);
+    }
+    20% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+    80% {
+        transform: scale(0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Apply the animation to elements with the class "bounce-in" */
+.bounce-in {
+    animation: bounceIn 1s ease-out;
 }
