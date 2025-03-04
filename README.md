@@ -14,3 +14,4 @@ My personal site.
 - [blur](https://codingdev.medium.com/make-a-navbars-background-blur-3eebc5ed7952) - create blurring effect for navigation bar
 - [section](https://www.w3schools.com/Tags/tag_section.asp) - separate the information on the website into different sections, making them more convenient to format
 - [activebutton](https://stackoverflow.com/questions/64441621/javascript-set-button-active) - use JavaScript to set buttons active
+- [keyframes](https://www.w3schools.com/cssref/atrule_keyframes.php) - create initial animations for elements on the website (when you refresh the page)
