@@ -15,3 +15,6 @@ My personal site.
 - [section](https://www.w3schools.com/Tags/tag_section.asp) - separate the information on the website into different sections, making them more convenient to format
 - [activebutton](https://stackoverflow.com/questions/64441621/javascript-set-button-active) - use JavaScript to set buttons active
 - [keyframes](https://www.w3schools.com/cssref/atrule_keyframes.php) - create initial animations for elements on the website (when you refresh the page)
+- [imgeffects](https://prismic.io/blog/css-image-effects) - create effects and responisve animations for images
+- [timeline](https://github.com/copilot/share/007212b0-02a4-8cd2-b042-5a00001e0079) - create a timeline of my education process in the website
+- [imgfilters](https://www.w3schools.com/cssref/css3_pr_filter.php) - create effects like grayscale and blur on images

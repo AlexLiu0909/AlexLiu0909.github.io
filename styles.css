@@ -7,6 +7,10 @@ html, body{
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1{
@@ -87,6 +91,7 @@ li a.active {
     color: #45a2ff; /* Fluorescent blue text */
     background-color: transparent; /* Remove background color */
     border-bottom: 2px solid #45a2ff; /* Add an underline */
+    font-weight: 400;
 }
 
 /* Add an underline animation on hover */
@@ -194,11 +199,20 @@ li a:hover::after {
     }
 }
 
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+
+.section img {
+    max-width: 50%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+    filter: grayscale(100%) blur(2px); /* Grayscale and blur by default */
+}
+
+.section img:hover {
+    transform: scale(1.05); /* Slightly scale up the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    filter: grayscale(0%) blur(0); /* Remove grayscale and blur on hover */
+    border: 4px solid #45a2ff; /* Add a border on hover */
 }
 
 /* Add keyframes for bounce-in animation */
@@ -265,8 +279,6 @@ img{
 }
 
 
-
-
 /* Explore Arrow Styles */
 .explore-arrow {
     text-align: center; /* Center the arrow and label */
@@ -306,4 +318,70 @@ img{
     margin-top: 0; /* Remove spacing below the arrow */
     padding: 0; /* Remove default padding */
     line-height: 1; /* Ensure no extra space from line height */
+}
+
+
+
+/* Timeline styling */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: left;
+}
+  
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #45a2ff;
+    left: 50%;
+    margin-left: -2px;
+}
+  
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+}
+  
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12.5px;
+    background-color: white;
+    border: 4px solid #45a2ff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+  
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+  
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+  
+.timeline-content {
+    padding: 20px;
+    background-color: rgba(0, 18, 51, 0.7);
+    position: relative;
+    border-radius: 6px;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+  
+.timeline-content h4 {
+    margin: 0 0 10px;
+}
+  
+.timeline-content p {
+    margin: 0;
 }
